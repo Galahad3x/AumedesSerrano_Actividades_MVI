@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6263114037930800620}
   - component: {fileID: 2547424982780317833}
+  - component: {fileID: 2034070257674934318}
   - component: {fileID: 7538553116529956148}
   - component: {fileID: 2785929515896162214}
-  - component: {fileID: 9012291477658965162}
+  - component: {fileID: 6664737503033010084}
+  - component: {fileID: 5959615304134904667}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -30,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.008758677, y: 0.008694531, z: 0.013597051, w: 0.99983144}
   m_LocalPosition: {x: 0.371, y: 1.91, z: 14.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.71, y: 0.71, z: 0.71}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5537744321192475626}
   m_Father: {fileID: 0}
@@ -49,6 +51,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!114 &2034070257674934318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3154301748624332089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc52c15bc4a56794ab3fcb4001dea44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 2661964949091280062}
 --- !u!33 &7538553116529956148
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -99,7 +114,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!143 &9012291477658965162
+--- !u!143 &6664737503033010084
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,13 +133,40 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.9999999
+  m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5959615304134904667
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3154301748624332089}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3514135622894028137
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5537744321192475626}
   - component: {fileID: 229520134266282575}
+  - component: {fileID: 253464095836620563}
   - component: {fileID: 2661964949091280062}
   - component: {fileID: 7480034989889046857}
   m_Layer: 0
@@ -153,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 3514135622894028137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.102, y: 0.868, z: -0.164}
+  m_LocalPosition: {x: 0.102, y: 0.868, z: -0.061}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -171,8 +214,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ce2b10c2da6214194781fe25954c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 1000
+  horizontalSensitivity: 904
+  verticalSensitivity: 3.6
   player: {fileID: 3154301748624332089}
+  rotationY: 0
+--- !u!114 &253464095836620563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3514135622894028137}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691896186b8a474a88621e0c5142b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalSensitivity: 200
+  player: {fileID: 3154301748624332089}
+  isEnabled: 0
 --- !u!20 &2661964949091280062
 Camera:
   m_ObjectHideFlags: 0
@@ -204,9 +264,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.23
+  near clip plane: 0.14
   far clip plane: 1000
-  field of view: 60
+  field of view: 74.5
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

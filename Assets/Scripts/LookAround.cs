@@ -9,21 +9,23 @@ public class LookAround : MonoBehaviour {
 
     [SerializeField] private GameObject player;
 
-    private float rotationY = 0.0f;
+    public float rotationY = 0.0f;
     
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
+        
+        rotationY = 0.0f;
     }
 
     void Update() {
         float mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * verticalSensitivity;
 
-        rotationY -= mouseY;
-        rotationY = Mathf.Clamp(rotationY, -80, 80);
+        rotationY -= mouseY; // Guardar información de rotación arriba/abajo
+        rotationY = Mathf.Clamp(rotationY, -80, 80); // Limitar para no mirar hacia atrás
 
-        transform.localRotation = Quaternion.Euler(rotationY, 0, 0);
+        transform.localRotation = Quaternion.Euler(rotationY, 0, 0); // Rotar cámara arriba y abajo
 
-        player.transform.Rotate(mouseX * Time.deltaTime * Vector3.up);
+        player.transform.Rotate(mouseX * Time.deltaTime * Vector3.up); // Rotar el personaje (com la cámara) a los lados 
     }
 }

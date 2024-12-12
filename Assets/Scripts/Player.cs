@@ -5,15 +5,18 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     [SerializeField] private float speed = 3.0f;
-    private float sprintMultiplier = 1.5f;
+    private float sprintMultiplier = 1.7f;
 
     private CharacterController controller;
     
     private float gravityAcceleration = -9.81f;
     private float verticalAcceleration = -1.0f;
     
+    private ViewModeManager viewModeManager;
+    
     void Start() {
         controller = GetComponent<CharacterController>();
+        viewModeManager = GetComponent<ViewModeManager>();
     }
 
     void Update() {
@@ -22,14 +25,19 @@ public class Player : MonoBehaviour {
         
         bool grounded = controller.isGrounded;
         
+        // Mover en la dirección de input
+        if (!viewModeManager.GetViewMode()) {
+            hInput = 0.0f;
+        }
         Vector3 movementDirectionLocal = new Vector3(hInput, 0, vInput).normalized;
-        Vector3 movementDirectionWorld = transform.TransformDirection(movementDirectionLocal);
+        Vector3 movementDirectionWorld = transform.TransformDirection(movementDirectionLocal); // Transformar el vector de local a global, para mover el personaje hacia donde mira la cámara
         
         float totalSpeed = Input.GetKey(KeyCode.LeftShift) ? speed * sprintMultiplier : speed;
         
         controller.Move(totalSpeed * Time.deltaTime * movementDirectionWorld);
 
-        verticalAcceleration += gravityAcceleration * Time.deltaTime;
+        // Gravedad
+        verticalAcceleration += gravityAcceleration * Time.deltaTime; // Se necesita una fuerza constante hacia abajo para que funcione isGrounded
         if (grounded && Input.GetKeyDown(KeyCode.Space)) {
             verticalAcceleration = 5f;
         }
