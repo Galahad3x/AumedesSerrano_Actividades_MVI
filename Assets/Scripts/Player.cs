@@ -13,10 +13,13 @@ public class Player : MonoBehaviour {
     private float verticalAcceleration = -1.0f;
     
     private ViewModeManager viewModeManager;
+
+    private Rigidbody rb;
     
     void Start() {
         controller = GetComponent<CharacterController>();
         viewModeManager = GetComponent<ViewModeManager>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update() {
