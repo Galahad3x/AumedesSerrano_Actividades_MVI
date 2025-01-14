@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1.72
+  m_AmbientIntensity: 1.98
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.100614116, g: 0.11768933, b: 0.16037738, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -12607,7 +12607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5942086015144691219, guid: 995d178296ce6854897a24e990ed7d85, type: 3}
       propertyPath: m_Name
-      value: Wall (10)
+      value: Wall Diff
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31122,7 +31122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5942086015144691219, guid: 995d178296ce6854897a24e990ed7d85, type: 3}
       propertyPath: m_Name
-      value: Wall (8)
+      value: Wall Diff
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47028,6 +47028,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3154301748624332089, guid: 655b36448d3991f409485a63c4b6150d, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5537744321192475626, guid: 655b36448d3991f409485a63c4b6150d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.005
@@ -47119,6 +47123,10 @@ PrefabInstance:
     - target: {fileID: 6664737503033010084, guid: 655b36448d3991f409485a63c4b6150d, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581375095786625550, guid: 655b36448d3991f409485a63c4b6150d, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47261,9 +47269,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 6107184464791069867, guid: d22e37c5293c2624aa57d69c5272901f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.038999915
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107184464791069867, guid: d22e37c5293c2624aa57d69c5272901f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0029993057
+      objectReference: {fileID: 0}
     - target: {fileID: 8339280886925050391, guid: d22e37c5293c2624aa57d69c5272901f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.033200074
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339280886925050391, guid: d22e37c5293c2624aa57d69c5272901f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.051
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339280886925050391, guid: d22e37c5293c2624aa57d69c5272901f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

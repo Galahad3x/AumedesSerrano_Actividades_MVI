@@ -20,7 +20,6 @@ public class ArrowLauncher : MonoBehaviour {
     }
 
     void createArrow(int plateId) {
-        Debug.Log("Event tirat " + plateId + " " + id);
-        Instantiate(dart, transform.position, Quaternion.Euler(0, 0, 90));
+        Instantiate(dart, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0, 0, 90));
     }
 }
