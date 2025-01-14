@@ -18,8 +18,6 @@ public class Player : MonoBehaviour {
     private Rigidbody rb;
 
     private bool isAlive = true;
-    private float deathAnimationTime = 1.2f;
-    [SerializeField] private GameObject camera;
 
     [SerializeField] private GameManagerSO gm;
 
