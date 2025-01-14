@@ -1,3 +1,4 @@
+using Labyrinth;
 using UnityEngine;
 
 public class ViewModeManager : MonoBehaviour {
@@ -7,6 +8,8 @@ public class ViewModeManager : MonoBehaviour {
 
     private LookAround lookAround;
     private LookAroundClassic lookAroundClassic;
+
+    [SerializeField] private GameManagerSO gm;
     
     [SerializeField]
     private Camera camera;
@@ -14,6 +17,8 @@ public class ViewModeManager : MonoBehaviour {
     void Start() {
         lookAround = camera.GetComponent<LookAround>();
         lookAroundClassic = camera.GetComponent<LookAroundClassic>();
+
+        gm.OnPlayerDeath += disableBoth;
     }
 
     void Update() {
@@ -32,5 +37,10 @@ public class ViewModeManager : MonoBehaviour {
 
     public bool GetViewMode() {
         return viewMode;
+    }
+
+    public void disableBoth() {
+        lookAround.enabled = false;
+        lookAroundClassic.enabled = false;
     }
 }
