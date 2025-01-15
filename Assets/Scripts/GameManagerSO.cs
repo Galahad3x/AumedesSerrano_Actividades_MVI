@@ -26,7 +26,6 @@ namespace Labyrinth {
         public event Action<int> OnSwitchPressed;
 
         public void RaiseSwitchPressed(int id) {
-            Debug.Log("RaiseSwitchPressed");
             OnSwitchPressed?.Invoke(id);
         }
     }

@@ -20,9 +20,7 @@ public class Door : MonoBehaviour {
     }
 
     private void openDoor(int doorId) {
-        Debug.Log("openDoor");
         if (id == doorId) {
-            Debug.Log("id: " + doorId);
             doorOpen = true;
         }
     }

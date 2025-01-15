@@ -74,12 +74,11 @@ public class Player : MonoBehaviour {
         */
 
         // Press buttons
-        if (Input.GetKey(KeyCode.E)) {
+        if (Input.GetKeyDown(KeyCode.E)) {
             Camera camera = viewModeManager.getCamera();
-            Debug.DrawRay(camera.transform.position, viewModeManager.getCamera().transform.forward * 2f, Color.red);
-            if (Physics.Raycast(camera.transform.position, viewModeManager.getCamera().transform.forward, out RaycastHit hit,
+            // Debug.DrawRay(camera.transform.position, viewModeManager.getCamera().transform.forward * 2f, Color.red);
+            if (Physics.Raycast(camera.transform.position, 2f * viewModeManager.getCamera().transform.forward, out RaycastHit hit,
                     1)) {
-                Debug.Log(hit.collider.gameObject.name);
                 if (hit.transform.TryGetComponent(out Interruptor activador)) {
                     gm.RaiseSwitchPressed(activador.getId());
                 }

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1006653805318899783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0355, y: 0.043340206, z: 0.08011246}
+  m_LocalPosition: {x: 0.033200074, y: -0.051, z: 0.004}
   m_LocalScale: {x: 0.18973416, y: 0.29289, z: 0.29289}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -101,7 +101,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -114,9 +114,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714758016730494668}
+  - component: {fileID: 8470983342727903016}
   m_Layer: 0
   m_Name: ArrowLauncher
-  m_TagString: Untagged
+  m_TagString: Dart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +139,21 @@ Transform:
   - {fileID: 8339280886925050391}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8470983342727903016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093827549250394804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c4e5cdd69af0a418a551efdb85a626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 11400000, guid: 57c5da87fdf89ee4e964f9b4aac745d3, type: 2}
+  id: 1
+  dart: {fileID: 8039620319869854813, guid: 1a1ddde666dcb5843a789652e184e53f, type: 3}
 --- !u!1 &1837126380274204564
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 1837126380274204564}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.7071079}
-  m_LocalPosition: {x: -0.1187, y: 0.05534029, z: 0.07911205}
+  m_LocalPosition: {x: -0.05, y: -0.038999915, z: 0.0029993057}
   m_LocalScale: {x: 0.037421416, y: 0.1270094, z: 0.037421416}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -239,7 +255,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
