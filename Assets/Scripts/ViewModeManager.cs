@@ -43,4 +43,8 @@ public class ViewModeManager : MonoBehaviour {
         lookAround.enabled = false;
         lookAroundClassic.enabled = false;
     }
+
+    public Camera getCamera() {
+        return camera;
+    }
 }

@@ -6,7 +6,6 @@ using UnityEngine;
 namespace Labyrinth {
     [CreateAssetMenu(menuName = "GameManagerSO")]
     public class GameManagerSO : ScriptableObject {
-
         public event Action<int> OnPressurePlateActivated;
         public event Action<int> OnPressurePlateDeactivated;
 
@@ -22,6 +21,13 @@ namespace Labyrinth {
 
         public void RaisePlayerDeath() {
             OnPlayerDeath?.Invoke();
+        }
+
+        public event Action<int> OnSwitchPressed;
+
+        public void RaiseSwitchPressed(int id) {
+            Debug.Log("RaiseSwitchPressed");
+            OnSwitchPressed?.Invoke(id);
         }
     }
 }

@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1.98
+  m_AmbientIntensity: 1.18
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.100614116, g: 0.11768933, b: 0.16037738, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -1987,6 +1987,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 486351f15650ce5408452352641fc317, type: 3}
+    - target: {fileID: 5678033560617555918, guid: ceebceccac36f8d479cdc90de2341232, type: 3}
+      propertyPath: id
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6135043017425289315, guid: ceebceccac36f8d479cdc90de2341232, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.928
@@ -37260,6 +37264,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9030605482313330360, guid: 13e309ae6fef65743a6f91808190f6fd, type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1535294194738051121, guid: 13e309ae6fef65743a6f91808190f6fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.229
@@ -37780,6 +37788,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9030605482313330360, guid: 13e309ae6fef65743a6f91808190f6fd, type: 3}
+      propertyPath: id
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1535294194738051121, guid: 13e309ae6fef65743a6f91808190f6fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.144
@@ -40515,6 +40527,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 6217dd83a11a7df46b82193c138a8ce2, type: 3}
+    - target: {fileID: 5678033560617555918, guid: ceebceccac36f8d479cdc90de2341232, type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6135043017425289315, guid: ceebceccac36f8d479cdc90de2341232, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.734
@@ -47147,10 +47163,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2741545176381380294, guid: ceebceccac36f8d479cdc90de2341232, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6135043017425289315, guid: ceebceccac36f8d479cdc90de2341232, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.331
@@ -47195,13 +47207,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interruptor Vermell
       objectReference: {fileID: 0}
-    - target: {fileID: 7918399995990669104, guid: ceebceccac36f8d479cdc90de2341232, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3891823576971881006, guid: ceebceccac36f8d479cdc90de2341232, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceebceccac36f8d479cdc90de2341232, type: 3}
@@ -47427,6 +47434,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9030605482313330360, guid: 13e309ae6fef65743a6f91808190f6fd, type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1811121026777651068, guid: 13e309ae6fef65743a6f91808190f6fd, type: 3}
       propertyPath: m_Name
       value: Door Vermella

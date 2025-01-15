@@ -67,9 +67,23 @@ public class Player : MonoBehaviour {
             controller.Move(verticalAcceleration * Time.deltaTime * Vector3.up);
         }
 
-        // Kill
+        /* Kill
         if (Input.GetKey(KeyCode.K)) {
             gm.RaisePlayerDeath();
+        }
+        */
+
+        // Press buttons
+        if (Input.GetKey(KeyCode.E)) {
+            Camera camera = viewModeManager.getCamera();
+            Debug.DrawRay(camera.transform.position, viewModeManager.getCamera().transform.forward * 2f, Color.red);
+            if (Physics.Raycast(camera.transform.position, viewModeManager.getCamera().transform.forward, out RaycastHit hit,
+                    1)) {
+                Debug.Log(hit.collider.gameObject.name);
+                if (hit.transform.TryGetComponent(out Interruptor activador)) {
+                    gm.RaiseSwitchPressed(activador.getId());
+                }
+            }
         }
     }
 
