@@ -7,7 +7,7 @@ public class PressurePlate : MonoBehaviour {
     [SerializeField] private int id;
     
     [SerializeField] private GameManagerSO gm;
-
+    
     void Start() {
         gm.OnPressurePlateActivated += lowerPlate;
         gm.OnPressurePlateDeactivated += raisePlate;

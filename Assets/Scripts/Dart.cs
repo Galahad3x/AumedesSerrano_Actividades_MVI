@@ -27,8 +27,8 @@ public class Dart : MonoBehaviour {
                 Vector3 direction = transform.up;
                 Random random = new Random();
 
-                direction.y += (random.Next(-20, 20) / 900f);
-                direction.z += (random.Next(0, 50) / 900f);
+                direction.y += (random.Next(0, 50) / 900f);
+                direction.z += (random.Next(-20, 20) / 900f);
                 
                 rb.AddForce(15 * direction, ForceMode.Impulse);
             }

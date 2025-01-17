@@ -12,7 +12,9 @@ public class BarTrap : MonoBehaviour {
     private bool state = false;
     private bool direction = true;
 
-    void Start() { }
+    void Start() {
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Update() {
         if (!state) {

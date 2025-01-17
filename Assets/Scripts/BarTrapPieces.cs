@@ -6,7 +6,7 @@ public class BarTrapPieces : MonoBehaviour {
     [SerializeField] private GameManagerSO gm;
 
     [SerializeField] private BarTrap barTrap;
-    
+
     void Start() { }
 
     void Update() { }

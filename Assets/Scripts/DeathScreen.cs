@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Labyrinth;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DeathScreen : MonoBehaviour {
@@ -23,6 +24,10 @@ public class DeathScreen : MonoBehaviour {
                 currentColor.a += (12f/255) * Time.deltaTime;
             }
             image.color = currentColor;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.R)) {
+            SceneManager.LoadScene(0);
         }
     }
 

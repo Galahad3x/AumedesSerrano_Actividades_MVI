@@ -25,18 +25,19 @@ public class PlayerRigidCollider : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.TryGetComponent(out PressurePlate plate)) {
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.CompareTag("Plate")) {
             if (pressurePlateActivated) {
                 nextExitShouldActivate = true;
-                gm.RaisePressurePlateActivated(plate.getId());
+                gm.RaisePressurePlateActivated(other.gameObject.GetComponent<PressurePlate>().getId());
             }
         }
     }
 
     private void OnCollisionExit(Collision other) {
-        if (other.gameObject.TryGetComponent(out PressurePlate plate)) {
+        if (other.gameObject.CompareTag("Plate")) {
             if (nextExitShouldActivate) {
-                gm.RaisePressurePlateDeactivated(plate.getId());
+                gm.RaisePressurePlateDeactivated(other.gameObject.GetComponent<PressurePlate>().getId());
                 pressurePlateActivated = false;
                 nextExitShouldActivate = false;
             }
