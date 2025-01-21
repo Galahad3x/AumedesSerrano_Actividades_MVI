@@ -17,6 +17,10 @@ public class DeathScreen : MonoBehaviour {
         gm.OnPlayerDeath += screenFadeIn;
     }
 
+    void OnDestroy() {
+        gm.OnPlayerDeath -= screenFadeIn;
+    }
+
     private void Update() {
         if (fadeIn) {
             Color currentColor = image.color;

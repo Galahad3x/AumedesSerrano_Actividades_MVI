@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour {
     [SerializeField] private int id;
-    
+
     [SerializeField] private GameManagerSO gm;
     
     void Start() {
         gm.OnPressurePlateActivated += lowerPlate;
         gm.OnPressurePlateDeactivated += raisePlate;
+    }
+
+    void OnDestroy() {
+        gm.OnPressurePlateActivated -= lowerPlate;
+        gm.OnPressurePlateDeactivated -= raisePlate;
     }
 
     void Update() { }
@@ -23,13 +28,15 @@ public class PressurePlate : MonoBehaviour {
         if (plateId != id) {
             return;
         }
-        transform.position = new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z);
+        
+        transform.Translate(Vector3.down * 0.1f);
     }
-    
+
     private void raisePlate(int plateId) {
         if (plateId != id) {
             return;
         }
-        transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
+        
+        transform.Translate(Vector3.up * 0.1f);
     }
 }

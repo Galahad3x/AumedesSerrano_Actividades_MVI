@@ -1,3 +1,4 @@
+using System;
 using Labyrinth;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -12,14 +13,19 @@ public class ViewModeManager : MonoBehaviour {
 
     [SerializeField] private GameManagerSO gm;
     
-    [SerializeField]
     private Camera _camera;
 
     void Start() {
+        _camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        
         lookAround = _camera.GetComponent<LookAround>();
         lookAroundClassic = _camera.GetComponent<LookAroundClassic>();
 
         gm.OnPlayerDeath += disableBoth;
+    }
+
+    private void OnDestroy() {
+        gm.OnPlayerDeath -= disableBoth;
     }
 
     void Update() {

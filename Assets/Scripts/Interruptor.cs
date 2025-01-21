@@ -14,6 +14,10 @@ public class Interruptor : MonoBehaviour {
         gm.OnSwitchPressed += pressSwitch;
     }
 
+    void OnDestroy() {
+        gm.OnSwitchPressed -= pressSwitch;
+    }
+
 
     void Update() {
         if (pressed && pressTime >= 0) {

@@ -25,7 +25,6 @@ public class PlayerRigidCollider : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other) {
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Plate")) {
             if (pressurePlateActivated) {
                 nextExitShouldActivate = true;

@@ -29,6 +29,10 @@ public class Player : MonoBehaviour {
         gm.OnPlayerDeath += playerDie;
     }
 
+    private void OnDestroy() {
+        gm.OnPlayerDeath -= playerDie;
+    }
+
     void Update() {
         float hInput = Input.GetAxisRaw("Horizontal");
         float vInput = Input.GetAxisRaw("Vertical");
@@ -66,12 +70,10 @@ public class Player : MonoBehaviour {
         if (isAlive) {
             controller.Move(verticalAcceleration * Time.deltaTime * Vector3.up);
         }
-
-        /* Kill
+        
         if (Input.GetKey(KeyCode.K)) {
             gm.RaisePlayerDeath();
         }
-        */
 
         // Press buttons
         if (Input.GetKeyDown(KeyCode.E)) {

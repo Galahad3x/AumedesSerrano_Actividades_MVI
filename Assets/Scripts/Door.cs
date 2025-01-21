@@ -1,3 +1,4 @@
+using System;
 using Labyrinth;
 using UnityEngine;
 
@@ -10,6 +11,10 @@ public class Door : MonoBehaviour {
 
     void Start() {
         gm.OnSwitchPressed += openDoor;
+    }
+
+    private void OnDestroy() {
+        gm.OnSwitchPressed -= openDoor;
     }
 
     void Update() {
