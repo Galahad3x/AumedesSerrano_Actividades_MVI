@@ -1,7 +1,5 @@
-using System;
 using Labyrinth;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ViewModeManager : MonoBehaviour {
     // True -> Normal
