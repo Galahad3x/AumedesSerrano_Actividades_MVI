@@ -1,24 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using Labyrinth;
 using UnityEngine;
 
-public class Torch : MonoBehaviour
-{
-    private Light light;
+public class Torch : MonoBehaviour {
+    private Light torchLight;
+    
+    private AudioSource audioSource;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        light = GetComponent<Light>();
+    [SerializeField] private GameManagerSO gm;
+
+    void Start() {
+        torchLight = GetComponent<Light>();
+        audioSource = GetComponent<AudioSource>();
+        gm.OnPlayerDeath += () => this.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            light.enabled = !light.enabled;
+    void Update() {
+        if (Input.GetMouseButtonDown(0)) {
+            audioSource.Play();
+            torchLight.enabled = !torchLight.enabled;
         }
     }
 }

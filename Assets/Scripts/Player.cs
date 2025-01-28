@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
     private Rigidbody rb;
 
     private bool isAlive = true;
+    private bool grounded;
+    private float movementAmount = 0.0f;
 
     [SerializeField] private GameManagerSO gm;
 
@@ -34,7 +36,7 @@ public class Player : MonoBehaviour {
         float hInput = Input.GetAxisRaw("Horizontal");
         float vInput = Input.GetAxisRaw("Vertical");
 
-        bool grounded = controller.isGrounded;
+        grounded = controller.isGrounded;
         if (grounded) {
             verticalAcceleration = -1.0f;
         }
@@ -53,6 +55,7 @@ public class Player : MonoBehaviour {
         float totalSpeed = Input.GetKey(KeyCode.LeftShift) ? speed * sprintMultiplier : speed;
 
         if (isAlive) {
+            movementAmount = movementDirectionWorld.magnitude;
             controller.Move(totalSpeed * Time.deltaTime * movementDirectionWorld);
         }
 
@@ -67,7 +70,7 @@ public class Player : MonoBehaviour {
         if (isAlive) {
             controller.Move(verticalAcceleration * Time.deltaTime * Vector3.up);
         }
-        
+
         if (Input.GetKey(KeyCode.K)) {
             gm.RaisePlayerDeath();
         }
@@ -76,8 +79,9 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E)) {
             Camera camera = viewModeManager.getCamera();
             // Debug.DrawRay(camera.transform.position, viewModeManager.getCamera().transform.forward * 2f, Color.red);
-            if (Physics.Raycast(camera.transform.position, 2f * viewModeManager.getCamera().transform.forward, out RaycastHit hit,
-                    1)) {
+            if (Physics.Raycast(camera.transform.position, viewModeManager.getCamera().transform.forward,
+                    out RaycastHit hit,
+                    2)) {
                 if (hit.transform.TryGetComponent(out Interruptor activador)) {
                     gm.RaiseSwitchPressed(activador.getId());
                 }
@@ -97,5 +101,17 @@ public class Player : MonoBehaviour {
         controller.enabled = false;
         rb.useGravity = true;
         rb.isKinematic = false;
+    }
+
+    public bool getIsAlive() {
+        return isAlive;
+    }
+
+    public bool getIsGrounded() {
+        return grounded;
+    }
+
+    public float getMovementAmount() {
+        return movementAmount;
     }
 }
