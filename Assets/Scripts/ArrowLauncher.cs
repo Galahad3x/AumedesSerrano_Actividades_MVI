@@ -19,7 +19,10 @@ public class ArrowLauncher : MonoBehaviour {
     void Update() { }
 
     void createArrow(int plateId) {
-        Instantiate(dart, new Vector3(transform.position.x, transform.position.y, transform.position.z),
-            Quaternion.Euler(0, 0, 90));
+        if (plateId == id)
+        {
+            Instantiate(dart, new Vector3(transform.position.x, transform.position.y, transform.position.z),
+                Quaternion.Euler(0, 0, 90));
+        }
     }
 }
