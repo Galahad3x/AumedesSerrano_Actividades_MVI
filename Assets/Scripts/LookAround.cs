@@ -23,6 +23,8 @@ public class LookAround : MonoBehaviour {
 
         transform.localRotation = Quaternion.Euler(rotationY, 0, 0); // Rotar cámara arriba y abajo
 
-        player.transform.Rotate(mouseX * Time.deltaTime * Vector3.up); // Rotar el personaje (com la cámara) a los lados 
+        float normaliser = 1 / (Screen.width / 960f);
+
+        player.transform.Rotate(mouseX * Time.deltaTime * normaliser * Vector3.up); // Rotar el personaje (con la cámara) a los lados 
     }
 }
